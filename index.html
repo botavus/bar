@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golden 7s - Crypto Slot</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="slot-machine">
+        <h1>🎰 GOLDEN LUCKY 7s 🎰</h1>
+        
+        <div class="game-header">
+            <div class="balance-box">
+                CREDITS: <span id="credits">1000</span>
+            </div>
+            <div class="level-box">
+                LEVEL: <span id="level">1</span>
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="reels-container">
+            <div class="reel" id="reel1">
+                <img src="images/7.png" class="symbol">
+            </div>
+            <div class="reel" id="reel2">
+                <img src="images/7.png" class="symbol">
+            </div>
+            <div class="reel" id="reel3">
+                <img src="images/7.png" class="symbol">
+            </div>
+        </div>
+
+        <div class="controls">
+            <div class="bet-controls">
+                <button onclick="changeBet(-10)">-</button>
+                <span id="currentBet">10</span>
+                <button onclick="changeBet(10)">+</button>
+            </div>
+            <button onclick="spin()" id="spinBtn">SPIN (10 CREDITS)</button>
+            <button onclick="toggleAutoSpin()" id="autoSpinBtn">AUTO: OFF</button>
+        </div>
+
+        <div class="paytable">
+            <h3>PAYTABLE:</h3>
+            <div class="payline">
+                <img src="images/7.png" alt="7">
+                <img src="images/7.png" alt="7">
+                <img src="images/7.png" alt="7">
+                <span class="multiplier">×500</span>
+            </div>
+            <div class="payline">
+                <img src="images/bar.png" alt="Bar">
+                <img src="images/bar.png" alt="Bar">
+                <img src="images/bar.png" alt="Bar">
+                <span class="multiplier">×100</span>
+            </div>
+            <div class="payline">
+                <img src="images/cherry.png" alt="Cherry">
+                <img src="images/cherry.png" alt="Cherry">
+                <img src="images/cherry.png" alt="Cherry">
+                <span class="multiplier">×50</span>
+            </div>
+            <div class="payline">
+                <img src="images/lemon.png" alt="Lemon">
+                <img src="images/lemon.png" alt="Lemon">
+                <img src="images/lemon.png" alt="Lemon">
+                <span class="multiplier">×20</span>
+            </div>
+            <div class="payline">
+                <span class="any-combination">ANY 7 →</span>
+                <span class="multiplier">×2</span>
+            </div>
+            <div class="payline">
+                <span class="any-combination">ANY BAR →</span>
+                <span class="multiplier">×1.5</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sound Elements -->
+    <audio id="spinSound" src="sounds/spin.mp3"></audio>
+    <audio id="winSound" src="sounds/win.mp3"></audio>
+    <audio id="levelUpSound" src="sounds/levelup.mp3"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
