@@ -1,4 +1,4 @@
-const tonConnectUI =  TON_CONNECT_UI.TonConnectUI({
+const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
     manifestUrl: 'https://botavus.github.io/bar/tonconnect-manifest.json' // Замените на ваш URL
 });
 
