@@ -1,5 +1,5 @@
 const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
-    manifestUrl: 'https://botavus.github.io/tonconnect-manifest.json' // Замените на ваш URL
+    manifestUrl: 'https://botavus.github.io/bar/tonconnect-manifest.json' // Замените на ваш URL
 });
 
 // Подключение кошелька
