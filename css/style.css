@@ -1,0 +1,317 @@
+/* style.css */
+body {
+    background: #1a1a2e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+    color: yellow;
+    margin: 0;
+    min-height: 100vh;
+    padding: 2px;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    max-width: 100%;
+    height: 100vhvh; /* Занимает всю высоту экрана */
+    background: #16213e;
+    padding: 1px;
+    box-sizing: border-box;
+    border-radius: 0; /* Убираем скругление углов */
+    box-shadow: none; /* Убираем тень */
+    margin: 0; /* Убираем отступы */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Чтобы ничего не выходило за границы */
+}
+
+.slots {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+    height: 60vh; /* Занимает 60% высоты экрана */
+    max-height: 600px; /* Ограничиваем максимальную высоту */
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+    box-sizing: border-box;
+}
+
+.reel {
+    width: 30%; /* Каждый барабан занимает 30% ширины контейнера */
+    height: 70%; /* Занимает всю высоту slots */
+    background: #0f3460;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border: 3px solid #00b4d8;
+    transition: transform 0.3s;
+}
+
+.reel img {
+    width: 80%; /* Уменьшаем размер символов */
+    height: 80%;
+    object-fit: contain;
+    transition: transform 0.3s;
+}
+.controls-wrapper {
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.balance-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.balance {
+    font-size: 2em;
+    color: yellow;
+    padding: 10px 20px;
+    background: rgba(0, 180, 216, 0.1);
+    border-radius: 28px;
+}
+
+.bet-control {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.bet-input {
+    padding: 10px 15px;
+    border: 2px solid #00b4d8;
+    border-radius: 5px;
+    background: #0f3460;
+    color: white;
+    font-size: 1.1em;
+    width: 120px;
+    text-align: center;
+}
+
+.bet-label {
+    font-size: 0.9em;
+    color: #00b4d8;
+}
+
+.spin-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 1.1em;
+    min-width: 100px;
+}
+
+.spin-btn {
+    background: linear-gradient(45deg, #00b4d8, #0077b6);
+}
+
+.auto-spin-btn {
+    background: linear-gradient(45deg, #ff6b6b, #ff3838);
+}
+
+.stop-spin-btn {
+    background: linear-gradient(45deg, #4cd137, #44bd32);
+    display: none;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .slots {
+        height: 25vh; /* Уменьшаем высоту на мобильных устройствах */
+        gap: 10px;
+    }
+
+    .reel {
+        width: 28%; /* Немного уменьшаем ширину барабанов */
+    }
+
+    .reel img {
+        width: 70%; /* Уменьшаем размер символов */
+        height: 70%;
+    }
+}
+
+@media (max-width: 480px) {
+    .slots {
+        height: 25vh; /* Еще меньше высота для маленьких экранов */
+        gap: 5px;
+    }
+
+    .reel {
+        width: 30%; /* Возвращаем ширину барабанов */
+    }
+
+    .reel img {
+        width: 100%; /* Еще меньше размер символов */
+        height: 100%;
+    }
+}
+    .win-combination.major-win {
+        font-size: 1.6em;
+    }
+}
+/* Добавьте эти стили в конец style.css */
+
+/* Стили для таблицы выплат */
+.paytable {
+    background: #0f3460;
+    padding: 1rem;
+    border-radius: 10px;
+    margin: 2rem auto;
+    width: 100%;
+    max-width: 800px;
+}
+
+.paytable table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.paytable th {
+    color: #00b4d8;
+    font-size: 1.2rem;
+    padding: 1rem;
+    border-bottom: 2px solid #00b4d8;
+}
+
+.paytable td {
+    padding: 1rem;
+    border-bottom: 1px solid #1a335e;
+    font-size: 1rem;
+}
+
+.paytable-symbols {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.paytable-symbols img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    transition: transform 0.3s;
+}
+
+.paytable-symbols img:hover {
+    transform: scale(1.2);
+}
+
+/* Улучшенные стили для уведомлений */
+.win-combination {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(45deg, #00b4d8, #0077b6);
+    padding: 20px 40px;
+    border-radius: 50px;
+    font-size: 1.8em;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    box-shadow: 0 0 30px rgba(0,180,216,0.5);
+    z-index: 1000;
+    display: none;
+    animation: winNotification 1.5s ease-out;
+    border: 2px solid #fff;
+}
+
+@keyframes winNotification {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -100px) scale(0.5);
+    }
+    50% {
+        opacity: 1;
+        transform: translate(-50%, 0) scale(1.1);
+    }
+    100% {
+        transform: translate(-50%, 0) scale(1);
+    }
+}
+
+/* Анимация для крупных выигрышей */
+.win-combination.major-win {
+    background: linear-gradient(45deg, #ffd700, #ff9800);
+    font-size: 2.2em;
+    animation: majorWinNotification 2s ease-out;
+    box-shadow: 0 0 40px rgba(255,215,0,0.5);
+}
+
+@keyframes majorWinNotification {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -100px) rotate(-10deg);
+    }
+    30% {
+        transform: translate(-50%, 0) rotate(10deg);
+    }
+    60% {
+        transform: translate(-50%, 0) rotate(-5deg);
+    }
+    100% {
+        transform: translate(-50%, 0) rotate(0deg);
+    }
+}
+/* Добавьте это в конец файла */
+.crypto-panel {
+    margin: 20px;
+    padding: 15px;
+    background: #1a335e;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.crypto-panel input, 
+.crypto-panel button {
+    margin: 5px;
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: 1px solid #00b4d8;
+}
+
+#connectBtn {
+    background: #4cd137;
+    color: white;
+    border: none;
+}
+
+#depositBtn {
+    background: #00b4d8;
+    color: white;
+    border: none;
+}
+
+#withdrawBtn {
+    background: #ff6b6b;
+    color: white;
+    border: none;
+}
