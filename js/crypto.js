@@ -1,13 +1,14 @@
+// Инициализация TonConnectUI с вашим манифестом
 const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
-    manifestUrl: 'https://botavus.github.io/bar/tonconnect-manifest.json' // Замените на ваш URL
+    manifestUrl: 'https://botavus.github.io/bar/tonconnect-manifest.json' // Укажите ваш URL
 });
 
 // Подключение кошелька
 document.getElementById('connectBtn').addEventListener('click', async () => {
     try {
         await tonConnectUI.connectWallet();
+        console.log('Кошелек подключен:', tonConnectUI.wallet);
         alert('Кошелек успешно подключен!');
-        updateGameBalanceFromWallet(); // Синхронизация баланса после подключения кошелька
     } catch (error) {
         console.error('Ошибка при подключении кошелька:', error);
         alert('Не удалось подключить кошелек. Пожалуйста, попробуйте снова.');
